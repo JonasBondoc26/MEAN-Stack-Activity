@@ -1,0 +1,76 @@
+<div class="container">
+  <header class="main-header">
+    <h1 class="title">Book Inventory</h1>
+    <p class="subtitle">Manage your personal library collection</p>
+  </header>
+
+  <div class="form-card">
+    <div class="form-grid">
+      <div class="input-group">
+        <label>Title</label>
+        <input [(ngModel)]="formData.title" placeholder="e.g. The Great Gatsby">
+      </div>
+      <div class="input-group">
+        <label>Author</label>
+        <input [(ngModel)]="formData.author" placeholder="e.g. F. Scott Fitzgerald">
+      </div>
+      <div class="input-group">
+        <label>Price</label>
+        <div class="price-input">
+          <input [(ngModel)]="formData.price" type="number" placeholder="0.00">
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Genre</label>
+        <input [(ngModel)]="formData.genre" placeholder="e.g. Fiction">
+      </div>
+      <div class="input-group full-width">
+        <label>Description</label>
+        <textarea [(ngModel)]="formData.desc" placeholder="Brief summary of the book..."></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn btn-secondary" (click)="resetForm()" *ngIf="isEditing">Cancel</button>
+      <button class="btn btn-primary" *ngIf="!isEditing" (click)="addBook()">
+        <span>+</span> Add Book
+      </button>
+      <button class="btn btn-success" *ngIf="isEditing" (click)="updateBook()">
+        <span>✓</span> Save Changes
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="books-grid">
+    @for (book of books; track book.id) {
+      <div class="book-card">
+        <div class="card-badge">{{ book.genre }}</div>
+        <div class="book-content">
+          <h3>{{ book.title }}</h3>
+          <p class="author">by {{ book.author }}</p>
+          <p class="description">{{ book.desc }}</p>
+          <div class="card-footer">
+            <span class="price">₱{{ book.price }}</span>
+            <div class="actions">
+              <button class="icon-btn edit" (click)="editBook(book)" title="Edit">
+                ✎
+              </button>
+              <button class="icon-btn delete" (click)="deleteBook(book.id)" title="Delete">
+                🗑
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div class="empty-state">
+        <span class="icon">📚</span>
+        <p>Your library is empty. Add your first book above!</p>
+      </div>
+    }
+  </div>
+</div>
+
+<router-outlet />

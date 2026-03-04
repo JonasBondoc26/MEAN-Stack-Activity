@@ -1,0 +1,213 @@
+/* ===== Container & Layout ===== */
+.container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #1f2937;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 5px 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ===== Glassmorphism Form Card ===== */
+.form-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 50px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ===== Input Styling ===== */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+input, textarea {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: #f9fafb;
+  transition: all 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ===== Action Buttons ===== */
+.form-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-primary { background: #6366f1; color: white; }
+.btn-success { background: #10b981; color: white; }
+.btn-secondary { background: #f3f4f6; color: #4b5563; }
+
+.btn:hover { 
+  opacity: 0.9; 
+  transform: translateY(-2px); 
+}
+
+/* ===== Divider ===== */
+.divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 40px 0;
+}
+
+/* ===== Books Grid Display ===== */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.book-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-badge {
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.book-content h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.15rem;
+  color: #111827;
+}
+
+.author {
+  font-size: 0.85rem;
+  color: #6366f1;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+/* ===== Card Footer ===== */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.icon-btn.edit { background: #e0e7ff; color: #4338ca; }
+.icon-btn.edit:hover { transform: scale(1.1); }
+
+.icon-btn.delete { background: #fee2e2; color: #b91c1c; }
+.icon-btn.delete:hover { transform: scale(1.1); }
+
+/* ===== Empty State ===== */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.empty-state .icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
